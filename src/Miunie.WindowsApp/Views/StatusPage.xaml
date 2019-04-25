@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="Miunie.WindowsApp.Views.StatusPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Miunie.WindowsApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"
+    DataContext="{Binding StatusPageInstance, Source={StaticResource Locator}}">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Top" 
+                    HorizontalAlignment="Center">
+            <Grid Margin="0, 60, 0, 0"  
+                  Width="175" 
+                  Height="175"
+                  x:Name="MiunieAvatar">
+
+                <Ellipse Fill="{ThemeResource SystemControlBackgroundAccentBrush}" 
+                         Width="175" Height="175"/>
+
+                <Ellipse Width="175" Height="175" >
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding BotAvatar}" />
+                    </Ellipse.Fill>
+                </Ellipse>
+
+            </Grid>
+
+
+            <TextBlock Margin="0, 20" 
+                       Style="{StaticResource TitleTextBlockStyle}" 
+                       HorizontalAlignment="Stretch" 
+                       TextAlignment="Center" 
+                       Text="{Binding ConnectionStatus}" />
+
+            <Grid>
+                <ProgressBar IsIndeterminate="True" Margin="0, 20" Visibility="{Binding ProgressBarIsVisible}"/>
+
+                <Button Visibility="{Binding ActionButtonIsVisible}" 
+                        Name="ActionBtn" 
+                        Content="{Binding ActionButtonText}" 
+                        HorizontalAlignment="Stretch" 
+                        Style="{ThemeResource ButtonRevealStyle}" 
+                        Click="ActionBtn_OnClick"/>
+            </Grid>
+
+
+
+        </StackPanel>
+    </Grid>
+</Page>
