@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>aspnet-Miunie.Server-3F7BA603-C5F5-4B6E-9E6F-DEC04393C408</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <Configurations>Debug;Release;AppVeyor</Configurations>
   </PropertyGroup>
 
 
