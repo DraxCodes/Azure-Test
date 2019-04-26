@@ -1,18 +1,12 @@
 version: 1.0.{build}
 os: Visual Studio 2019 Preview
 skip_tags: true
-configuration: Debug
+configuration: AppVeyor
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
   version: '{version}'
   package_version: '{version}'
-assembly_info:
-  patch: true
-  file: '**\AssemblyInfo.*'
-  assembly_version: '{version}'
-  assembly_file_version: '{version}'
-  assembly_informational_version: '{version}'
 build_script:
   - dotnet build src -c Release
 test_script:
