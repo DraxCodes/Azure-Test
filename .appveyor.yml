@@ -1,7 +1,7 @@
 version: 1.0.{build}
 os: Visual Studio 2019 Preview
 skip_tags: true
-configuration: AppVeyor
+configuration: Debug
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
